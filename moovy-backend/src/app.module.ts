@@ -18,7 +18,7 @@ import { LibraryModule } from './library/library.module';
       synchronize: true,
     }),
     OmdbModule,
-    LibraryModule
+    LibraryModule,
   ],
   controllers: [AppController],
   providers: [AppService],

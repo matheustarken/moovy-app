@@ -6,6 +6,6 @@ import { HttpModule } from '@nestjs/axios';
 @Module({
   imports: [HttpModule],
   providers: [OmdbService],
-  controllers: [OmdbController]
+  controllers: [OmdbController],
 })
 export class OmdbModule {}

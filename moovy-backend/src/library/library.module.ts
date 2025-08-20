@@ -5,10 +5,8 @@ import { LibraryService } from './library.service';
 import { LibraryController } from './library.controller';
 
 @Module({
-    imports: [
-        TypeOrmModule.forFeature([Movie])
-    ],
-    providers: [LibraryService],
-    controllers: [LibraryController]
+  imports: [TypeOrmModule.forFeature([Movie])],
+  providers: [LibraryService],
+  controllers: [LibraryController],
 })
 export class LibraryModule {}
