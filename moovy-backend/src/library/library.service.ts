@@ -7,19 +7,19 @@ import { Repository } from 'typeorm';
 export class LibraryService {
   constructor(
     @InjectRepository(Movie)
-    private readonly movieRepository: Repository<Movie>
+    private readonly movie_repository: Repository<Movie>
   ) {}
 
-  async addMovie(movieData: any): Promise<Movie[]> {
-    const newMovie = this.movieRepository.create(movieData);
-    return this.movieRepository.save(newMovie);
+  async addMovie(movie_data: any): Promise<Movie[]> {
+    const new_movie = this.movie_repository.create(movie_data);
+    return this.movie_repository.save(new_movie);
   }
 
   async findAll(): Promise<Movie[]> {
-    return this.movieRepository.find();
+    return this.movie_repository.find();
   }
 
-  async removeMovie(imdbID: string): Promise<void> {
-    await this.movieRepository.delete({ imdbID });
+  async removeMovie(imdb_id: string): Promise<void> {
+    await this.movie_repository.delete({ imdb_id });
   }
 }

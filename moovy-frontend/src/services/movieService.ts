@@ -1,4 +1,5 @@
 import axios from 'axios';
+import type { MovieDto } from './dto/movie.dto';
 
 const API_URL = 'http://localhost:3000';
 
@@ -25,7 +26,7 @@ export const addMovieToLibrary = async (movieData: any) => {
   }
 };
 
-export const getMyLibrary = async () => {
+export const getMyLibrary = async (): Promise<MovieDto[]> => {
   try {
     const response = await axios.get(`${API_URL}/library`);
     return response.data;

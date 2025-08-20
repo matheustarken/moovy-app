@@ -5,15 +5,15 @@ import { Observable, lastValueFrom } from 'rxjs';
 
 @Injectable()
 export class OmdbService {
-  constructor(private httpService: HttpService) {}
+  constructor(private http_service: HttpService) {}
 
   async searchMovies(query: string): Promise<any> {
-    const apiKey = '883cf4b1';
+    const api_key = process.env.OMDB_API_KEY;
 
     try {
       const response = await lastValueFrom(
-        this.httpService.get(
-          `http://www.omdbapi.com/?s=${query}&apikey=${apiKey}`
+        this.http_service.get(
+          `http://www.omdbapi.com/?s=${query}&apikey=${api_key}`
         )
       );
       return response.data;

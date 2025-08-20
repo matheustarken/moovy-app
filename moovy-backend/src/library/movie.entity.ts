@@ -1,12 +1,12 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity()
+@Entity({name: 'movies'})
 export class Movie {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: number;
 
   @Column()
-  imdbID: string;
+  imdb_id: string;
 
   @Column()
   title: string;
@@ -18,5 +18,5 @@ export class Movie {
   poster: string;
 
   @Column()
-  imdbRating: string;
+  imdb_rating: string;
 }

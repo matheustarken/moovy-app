@@ -42,11 +42,11 @@ export default function MovieCard({
   const handleAddMovie = async () => {
     try {
       const movieData = {
-        imdbID: id,
+        imdb_id: id,
         title: title || 'N/A',
         year: year || 'N/A',
         poster: poster || 'N/A',
-        imdbRating: rating || 'N/A',
+        imdb_rating: rating || 'N/A',
       };
       await addMovieToLibrary(movieData);
       alert(`${title} added to your library!`);

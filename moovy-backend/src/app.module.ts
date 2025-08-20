@@ -9,11 +9,7 @@ import { LibraryModule } from './library/library.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'moovy_user',
-      password: '06111330',
-      database: 'moovy',
+      url: process.env.DATABASE_URL,
       autoLoadEntities: true,
       synchronize: true,
     }),

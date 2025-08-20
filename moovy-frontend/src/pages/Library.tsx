@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 import { Container, Grid, Typography, CircularProgress } from '@mui/material';
 import { getMyLibrary, removeMovieFromLibrary } from '../services/movieService';
 import MovieCard from '../components/MovieCard';
+import type { MovieDto } from '../services/dto/movie.dto';
 
 export default function Library() {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState<MovieDto[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -23,7 +24,7 @@ export default function Library() {
   }, []);
 
   const handleRemove = (imdbID: string) => {
-    setMovies(movies.filter((movie: any) => movie.imdbID !== imdbID));
+    setMovies(movies.filter((movie: MovieDto) => movie.imdb_id !== imdbID));
   };
 
   return (
